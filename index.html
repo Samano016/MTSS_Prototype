@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MTSS Platform</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <h2>MTSS</h2>
+
+            <p class="school-name">
+                School Support Platform
+            </p>
+
+            <nav>
+
+                <button>Dashboard</button>
+
+                <button>My Students</button>
+
+                <button class="active">
+                    Data Entry
+                </button>
+
+                <button>MTSS Cases</button>
+
+                <button>Communication</button>
+
+                <button>Reports</button>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main">
+
+            <header>
+
+                <h1>MTSS Data Entry</h1>
+
+                <p>
+                    Record student information, interventions,
+                    and progress.
+                </p>
+
+            </header>
+
+
+            <!-- DATA ENTRY CARD -->
+            <section class="card">
+
+                <h2>Student Data</h2>
+
+                <form id="mtssForm">
+
+                    <div class="form-grid">
+
+                        <!-- STUDENT -->
+                        <div class="form-group">
+
+                            <label for="student">
+                                Student
+                            </label>
+
+                            <input
+                                type="text"
+                                id="student"
+                                placeholder="Student name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- DATE -->
+                        <div class="form-group">
+
+                            <label for="date">
+                                Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="date"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- GRADE -->
+                        <div class="form-group">
+
+                            <label for="grade">
+                                Grade
+                            </label>
+
+                            <select id="grade">
+
+                                <option value="">
+                                    Select grade
+                                </option>
+
+                                <option value="9">
+                                    9
+                                </option>
+
+                                <option value="10">
+                                    10
+                                </option>
+
+                                <option value="11">
+                                    11
+                                </option>
+
+                                <option value="12">
+                                    12
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- AREA -->
+                        <div class="form-group">
+
+                            <label for="area">
+                                Area
+                            </label>
+
+                            <select id="area">
+
+                                <option value="">
+                                    Select area
+                                </option>
+
+                                <option value="Behavior">
+                                    Behavior
+                                </option>
+
+                                <option value="Academics">
+                                    Academics
+                                </option>
+
+                                <option value="Tardies">
+                                    Tardies
+                                </option>
+
+                                <option value="Emotional/Social">
+                                    Emotional/Social
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- MEASURE -->
+                        <div class="form-group">
+
+                            <label for="measure">
+                                Measure / Data
+                            </label>
+
+                            <input
+                                type="text"
+                                id="measure"
+                                placeholder="Example: 68%"
+                            >
+
+                        </div>
+
+
+                        <!-- INTERVENTION -->
+                        <div class="form-group">
+
+                            <label for="intervention">
+                                Intervention
+                            </label>
+
+                            <input
+                                type="text"
+                                id="intervention"
+                                placeholder="Example: Reading group"
+                            >
+
+                        </div>
+
+
+                        <!-- RESPONSE -->
+                        <div class="form-group">
+
+                            <label for="response">
+                                Response
+                            </label>
+
+                            <select id="response">
+
+                                <option value="">
+                                    Select response
+                                </option>
+
+                                <option value="Improving">
+                                    Improving
+                                </option>
+
+                                <option value="No Change">
+                                    No Change
+                                </option>
+
+                                <option value="Declining">
+                                    Declining
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- STAFF -->
+                        <div class="form-group">
+
+                            <label for="staff">
+                                Staff Member
+                            </label>
+
+                            <input
+                                type="text"
+                                id="staff"
+                                placeholder="Teacher name"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- NOTES -->
+                    <div class="form-group">
+
+                        <label for="notes">
+                            Notes
+                        </label>
+
+                        <textarea
+                            id="notes"
+                            rows="5"
+                            placeholder="Enter additional information..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- BUTTON -->
+                    <button
+                        type="submit"
+                        class="submit-button"
+                        id="submitButton"
+                    >
+                        Submit MTSS Data
+                    </button>
+
+
+                    <!-- STATUS -->
+                    <div
+                        id="status"
+                        class="status"
+                    ></div>
+
+                </form>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

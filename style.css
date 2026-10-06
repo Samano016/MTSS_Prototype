@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 240px;
+    background: #172033;
+    color: white;
+    padding: 25px 18px;
+}
+
+.sidebar h2 {
+    margin-bottom: 5px;
+}
+
+.school-name {
+    font-size: 13px;
+    color: #aeb7c7;
+    margin-bottom: 30px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar button {
+    background: transparent;
+    border: none;
+    color: #d9dfeb;
+    text-align: left;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.sidebar button:hover,
+.sidebar button.active {
+    background: #2d3a52;
+    color: white;
+}
+
+
+/* MAIN */
+
+.main {
+    flex: 1;
+    padding: 40px;
+    max-width: 1200px;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #6b7280;
+}
+
+
+/* CARD */
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+}
+
+.card h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+
+/* FORM */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+/* BUTTON */
+
+.submit-button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 13px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.submit-button:hover {
+    background: #1d4ed8;
+}
+
+.submit-button:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+
+/* STATUS */
+
+.status {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .main {
+        padding: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+}

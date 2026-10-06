@@ -6,296 +6,1665 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>MTSS Platform</title>
+    <title>MTSS Support Platform</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-    <div class="app">
+<div class="app">
 
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
 
-            <h2>MTSS</h2>
+    <aside class="sidebar">
 
-            <p class="school-name">
-                School Support Platform
-            </p>
+        <div class="brand">
 
-            <nav>
+            <div class="brand-icon">
+                M
+            </div>
 
-                <button>Dashboard</button>
+            <div>
+                <h2>MTSS</h2>
+                <span>Support Platform</span>
+            </div>
 
-                <button>My Students</button>
+        </div>
 
-                <button class="active">
-                    Data Entry
+
+        <div class="school-label">
+            SCHOOL SUPPORT
+        </div>
+
+
+        <nav class="navigation">
+
+            <button
+                class="nav-button active"
+                data-page="dashboard">
+
+                <span class="nav-icon">⌂</span>
+                Dashboard
+
+            </button>
+
+
+            <button
+                class="nav-button"
+                data-page="students">
+
+                <span class="nav-icon">👥</span>
+                My Students
+
+            </button>
+
+
+            <button
+                class="nav-button"
+                data-page="data-entry">
+
+                <span class="nav-icon">＋</span>
+                Data Entry
+
+            </button>
+
+
+            <button
+                class="nav-button"
+                data-page="cases">
+
+                <span class="nav-icon">▣</span>
+                MTSS Cases
+
+            </button>
+
+
+            <button
+                class="nav-button"
+                data-page="communication">
+
+                <span class="nav-icon">▱</span>
+                Communication
+
+            </button>
+
+
+            <button
+                class="nav-button"
+                data-page="reports">
+
+                <span class="nav-icon">▥</span>
+                Reports
+
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="user-card">
+
+                <div class="user-avatar">
+                    T
+                </div>
+
+                <div>
+
+                    <strong>Teacher</strong>
+
+                    <span>Staff Account</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="main-content">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <div class="breadcrumb">
+                    MTSS Platform
+                </div>
+
+                <h1 id="pageTitle">
+                    Dashboard
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="notification">
+                    🔔
+                    <span></span>
+                </div>
+
+
+                <div class="profile">
+
+                    <div class="profile-avatar">
+                        T
+                    </div>
+
+                    <div>
+
+                        <strong>Teacher</strong>
+
+                        <small>Staff</small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             DASHBOARD
+        ========================== -->
+
+        <section
+            id="dashboard"
+            class="page active-page">
+
+            <div class="page-intro">
+
+                <div>
+
+                    <h2>Good morning!</h2>
+
+                    <p>
+                        Here's an overview of your MTSS students
+                        and recent activity.
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-button"
+                    data-page-target="data-entry">
+
+                    + Add Student Data
+
                 </button>
 
-                <button>MTSS Cases</button>
-
-                <button>Communication</button>
-
-                <button>Reports</button>
-
-            </nav>
-
-        </aside>
+            </div>
 
 
-        <!-- MAIN CONTENT -->
-        <main class="main">
+            <!-- STAT CARDS -->
 
-            <header>
+            <div class="stats-grid">
 
-                <h1>MTSS Data Entry</h1>
+                <div class="stat-card">
 
-                <p>
-                    Record student information, interventions,
-                    and progress.
-                </p>
+                    <div class="stat-icon blue">
+                        👥
+                    </div>
 
-            </header>
+                    <div>
+
+                        <span>Total MTSS Students</span>
+
+                        <strong>27</strong>
+
+                        <small>+3 this month</small>
+
+                    </div>
+
+                </div>
 
 
-            <!-- DATA ENTRY CARD -->
-            <section class="card">
+                <div class="stat-card">
 
-                <h2>Student Data</h2>
+                    <div class="stat-icon yellow">
+                        ●
+                    </div>
+
+                    <div>
+
+                        <span>Tier 2</span>
+
+                        <strong>15</strong>
+
+                        <small>Students receiving interventions</small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon red">
+                        ▲
+                    </div>
+
+                    <div>
+
+                        <span>Tier 3</span>
+
+                        <strong>4</strong>
+
+                        <small>Intensive support</small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <span>Reviews This Week</span>
+
+                        <strong>6</strong>
+
+                        <small>Upcoming MTSS reviews</small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DASHBOARD CONTENT -->
+
+            <div class="dashboard-grid">
+
+
+                <div class="content-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>Recent Student Activity</h3>
+
+                            <p>
+                                Latest information entered into MTSS
+                            </p>
+
+                        </div>
+
+                        <button
+                            class="text-button"
+                            data-page-target="students">
+
+                            View All
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="activity-list">
+
+                        <div class="activity">
+
+                            <div class="activity-avatar">
+                                JS
+                            </div>
+
+                            <div class="activity-info">
+
+                                <strong>John Smith</strong>
+
+                                <span>
+                                    Academic progress updated
+                                </span>
+
+                            </div>
+
+                            <small>
+                                Today
+                            </small>
+
+                        </div>
+
+
+                        <div class="activity">
+
+                            <div class="activity-avatar purple">
+                                MG
+                            </div>
+
+                            <div class="activity-info">
+
+                                <strong>Maria Garcia</strong>
+
+                                <span>
+                                    Behavior intervention updated
+                                </span>
+
+                            </div>
+
+                            <small>
+                                Yesterday
+                            </small>
+
+                        </div>
+
+
+                        <div class="activity">
+
+                            <div class="activity-avatar orange">
+                                DL
+                            </div>
+
+                            <div class="activity-info">
+
+                                <strong>Daniel Lopez</strong>
+
+                                <span>
+                                    Parent communication recorded
+                                </span>
+
+                            </div>
+
+                            <small>
+                                2 days ago
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="content-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>Upcoming Reviews</h3>
+
+                            <p>
+                                MTSS meetings and progress reviews
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="review-list">
+
+                        <div class="review">
+
+                            <div class="date-box">
+
+                                <strong>08</strong>
+                                <span>OCT</span>
+
+                            </div>
+
+                            <div>
+
+                                <strong>John Smith</strong>
+
+                                <span>Tier 2 Review</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="review">
+
+                            <div class="date-box">
+
+                                <strong>10</strong>
+                                <span>OCT</span>
+
+                            </div>
+
+                            <div>
+
+                                <strong>Maria Garcia</strong>
+
+                                <span>Intervention Review</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="review">
+
+                            <div class="date-box">
+
+                                <strong>14</strong>
+                                <span>OCT</span>
+
+                            </div>
+
+                            <div>
+
+                                <strong>Daniel Lopez</strong>
+
+                                <span>Tier 3 Review</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             STUDENTS
+        ========================== -->
+
+        <section
+            id="students"
+            class="page">
+
+            <div class="page-intro">
+
+                <div>
+
+                    <h2>My Students</h2>
+
+                    <p>
+                        View students currently receiving MTSS support.
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-button"
+                    data-page-target="data-entry">
+
+                    + Add Data
+
+                </button>
+
+            </div>
+
+
+            <div class="content-card">
+
+
+                <div class="toolbar">
+
+                    <input
+                        type="text"
+                        id="studentSearch"
+                        placeholder="Search students...">
+
+
+                    <select id="tierFilter">
+
+                        <option value="all">
+                            All Tiers
+                        </option>
+
+                        <option value="1">
+                            Tier 1
+                        </option>
+
+                        <option value="2">
+                            Tier 2
+                        </option>
+
+                        <option value="3">
+                            Tier 3
+                        </option>
+
+                    </select>
+
+
+                    <select id="gradeFilter">
+
+                        <option value="all">
+                            All Grades
+                        </option>
+
+                        <option value="9">
+                            Grade 9
+                        </option>
+
+                        <option value="10">
+                            Grade 10
+                        </option>
+
+                        <option value="11">
+                            Grade 11
+                        </option>
+
+                        <option value="12">
+                            Grade 12
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Student</th>
+                                <th>Grade</th>
+                                <th>Tier</th>
+                                <th>Primary Area</th>
+                                <th>Intervention</th>
+                                <th>Response</th>
+                                <th>Next Review</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="studentTable">
+
+                            <tr
+                                data-name="John Smith"
+                                data-grade="10"
+                                data-tier="2">
+
+                                <td>
+
+                                    <strong>
+                                        John Smith
+                                    </strong>
+
+                                </td>
+
+                                <td>10</td>
+
+                                <td>
+                                    <span class="tier tier-2">
+                                        Tier 2
+                                    </span>
+                                </td>
+
+                                <td>Academics</td>
+
+                                <td>Reading Group</td>
+
+                                <td>
+                                    <span class="response improving">
+                                        Improving
+                                    </span>
+                                </td>
+
+                                <td>Oct 8, 2026</td>
+
+                            </tr>
+
+
+                            <tr
+                                data-name="Maria Garcia"
+                                data-grade="11"
+                                data-tier="2">
+
+                                <td>
+                                    <strong>
+                                        Maria Garcia
+                                    </strong>
+                                </td>
+
+                                <td>11</td>
+
+                                <td>
+                                    <span class="tier tier-2">
+                                        Tier 2
+                                    </span>
+                                </td>
+
+                                <td>Behavior</td>
+
+                                <td>Check-In</td>
+
+                                <td>
+                                    <span class="response improving">
+                                        Improving
+                                    </span>
+                                </td>
+
+                                <td>Oct 10, 2026</td>
+
+                            </tr>
+
+
+                            <tr
+                                data-name="Daniel Lopez"
+                                data-grade="10"
+                                data-tier="3">
+
+                                <td>
+                                    <strong>
+                                        Daniel Lopez
+                                    </strong>
+                                </td>
+
+                                <td>10</td>
+
+                                <td>
+                                    <span class="tier tier-3">
+                                        Tier 3
+                                    </span>
+                                </td>
+
+                                <td>Academics</td>
+
+                                <td>Individual Support</td>
+
+                                <td>
+                                    <span class="response no-change">
+                                        No Change
+                                    </span>
+                                </td>
+
+                                <td>Oct 14, 2026</td>
+
+                            </tr>
+
+
+                            <tr
+                                data-name="Sofia Martinez"
+                                data-grade="12"
+                                data-tier="1">
+
+                                <td>
+                                    <strong>
+                                        Sofia Martinez
+                                    </strong>
+                                </td>
+
+                                <td>12</td>
+
+                                <td>
+                                    <span class="tier tier-1">
+                                        Tier 1
+                                    </span>
+                                </td>
+
+                                <td>Tardies</td>
+
+                                <td>Attendance Check-In</td>
+
+                                <td>
+                                    <span class="response improving">
+                                        Improving
+                                    </span>
+                                </td>
+
+                                <td>Oct 18, 2026</td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             DATA ENTRY
+        ========================== -->
+
+        <section
+            id="data-entry"
+            class="page">
+
+            <div class="page-intro">
+
+                <div>
+
+                    <h2>Data Entry</h2>
+
+                    <p>
+                        Record student progress, concerns,
+                        interventions, and outcomes.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>Student Data</h3>
+
+                        <p>
+                            Information will be saved to the MTSS
+                            Google Sheet.
+                        </p>
+
+                    </div>
+
+                </div>
+
 
                 <form id="mtssForm">
 
-                    <div class="form-grid">
 
-                        <!-- STUDENT -->
-                        <div class="form-group">
+                    <div class="form-section">
 
-                            <label for="student">
-                                Student
-                            </label>
-
-                            <input
-                                type="text"
-                                id="student"
-                                placeholder="Student name"
-                                required
-                            >
-
-                        </div>
+                        <h3>Student Information</h3>
 
 
-                        <!-- DATE -->
-                        <div class="form-group">
-
-                            <label for="date">
-                                Date
-                            </label>
-
-                            <input
-                                type="date"
-                                id="date"
-                                required
-                            >
-
-                        </div>
+                        <div class="form-grid">
 
 
-                        <!-- GRADE -->
-                        <div class="form-group">
+                            <div class="form-group">
 
-                            <label for="grade">
-                                Grade
-                            </label>
+                                <label for="student">
+                                    Student
+                                </label>
 
-                            <select id="grade">
+                                <input
+                                    type="text"
+                                    id="student"
+                                    placeholder="Student name"
+                                    required>
 
-                                <option value="">
-                                    Select grade
-                                </option>
-
-                                <option value="9">
-                                    9
-                                </option>
-
-                                <option value="10">
-                                    10
-                                </option>
-
-                                <option value="11">
-                                    11
-                                </option>
-
-                                <option value="12">
-                                    12
-                                </option>
-
-                            </select>
-
-                        </div>
+                            </div>
 
 
-                        <!-- AREA -->
-                        <div class="form-group">
+                            <div class="form-group">
 
-                            <label for="area">
-                                Area
-                            </label>
+                                <label for="date">
+                                    Date
+                                </label>
 
-                            <select id="area">
+                                <input
+                                    type="date"
+                                    id="date"
+                                    required>
 
-                                <option value="">
-                                    Select area
-                                </option>
-
-                                <option value="Behavior">
-                                    Behavior
-                                </option>
-
-                                <option value="Academics">
-                                    Academics
-                                </option>
-
-                                <option value="Tardies">
-                                    Tardies
-                                </option>
-
-                                <option value="Emotional/Social">
-                                    Emotional/Social
-                                </option>
-
-                                <option value="Other">
-                                    Other
-                                </option>
-
-                            </select>
-
-                        </div>
+                            </div>
 
 
-                        <!-- MEASURE -->
-                        <div class="form-group">
+                            <div class="form-group">
 
-                            <label for="measure">
-                                Measure / Data
-                            </label>
+                                <label for="grade">
+                                    Grade
+                                </label>
 
-                            <input
-                                type="text"
-                                id="measure"
-                                placeholder="Example: 68%"
-                            >
+                                <select id="grade">
 
-                        </div>
+                                    <option value="">
+                                        Select grade
+                                    </option>
 
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
 
-                        <!-- INTERVENTION -->
-                        <div class="form-group">
+                                </select>
 
-                            <label for="intervention">
-                                Intervention
-                            </label>
-
-                            <input
-                                type="text"
-                                id="intervention"
-                                placeholder="Example: Reading group"
-                            >
-
-                        </div>
+                            </div>
 
 
-                        <!-- RESPONSE -->
-                        <div class="form-group">
+                            <div class="form-group">
 
-                            <label for="response">
-                                Response
-                            </label>
+                                <label for="area">
+                                    Area
+                                </label>
 
-                            <select id="response">
+                                <select id="area" required>
 
-                                <option value="">
-                                    Select response
-                                </option>
+                                    <option value="">
+                                        Select area
+                                    </option>
 
-                                <option value="Improving">
-                                    Improving
-                                </option>
+                                    <option value="Behavior">
+                                        Behavior
+                                    </option>
 
-                                <option value="No Change">
-                                    No Change
-                                </option>
+                                    <option value="Academics">
+                                        Academics
+                                    </option>
 
-                                <option value="Declining">
-                                    Declining
-                                </option>
+                                    <option value="Tardies">
+                                        Tardies
+                                    </option>
 
-                            </select>
+                                    <option value="Emotional/Social">
+                                        Emotional/Social
+                                    </option>
 
-                        </div>
+                                    <option value="Other">
+                                        Other
+                                    </option>
 
+                                </select>
 
-                        <!-- STAFF -->
-                        <div class="form-group">
-
-                            <label for="staff">
-                                Staff Member
-                            </label>
-
-                            <input
-                                type="text"
-                                id="staff"
-                                placeholder="Teacher name"
-                            >
+                            </div>
 
                         </div>
 
                     </div>
 
 
-                    <!-- NOTES -->
-                    <div class="form-group">
 
-                        <label for="notes">
-                            Notes
-                        </label>
+                    <div class="form-section">
 
-                        <textarea
-                            id="notes"
-                            rows="5"
-                            placeholder="Enter additional information..."
-                        ></textarea>
+                        <h3>Progress Information</h3>
+
+
+                        <div class="form-grid">
+
+
+                            <div class="form-group">
+
+                                <label for="measure">
+                                    Measure / Data
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="measure"
+                                    placeholder="Example: 68%">
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="intervention">
+                                    Intervention
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="intervention"
+                                    placeholder="Example: Reading Group">
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="response">
+                                    Response
+                                </label>
+
+                                <select id="response">
+
+                                    <option value="">
+                                        Select response
+                                    </option>
+
+                                    <option value="Improving">
+                                        Improving
+                                    </option>
+
+                                    <option value="No Change">
+                                        No Change
+                                    </option>
+
+                                    <option value="Declining">
+                                        Declining
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="staff">
+                                    Staff Member
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="staff"
+                                    placeholder="Staff name">
+
+                            </div>
+
+                        </div>
 
                     </div>
 
 
-                    <!-- BUTTON -->
-                    <button
-                        type="submit"
-                        class="submit-button"
-                        id="submitButton"
-                    >
-                        Submit MTSS Data
-                    </button>
+
+                    <div class="form-section">
+
+                        <h3>Additional Notes</h3>
 
 
-                    <!-- STATUS -->
+                        <div class="form-group">
+
+                            <label for="notes">
+                                Notes
+                            </label>
+
+                            <textarea
+                                id="notes"
+                                rows="6"
+                                placeholder="Enter additional information..."></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="reset"
+                            class="secondary-button">
+
+                            Clear
+
+                        </button>
+
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                            id="submitButton">
+
+                            Submit MTSS Data
+
+                        </button>
+
+                    </div>
+
+
                     <div
                         id="status"
-                        class="status"
-                    ></div>
+                        class="status">
+                    </div>
+
 
                 </form>
 
-            </section>
+            </div>
 
-        </main>
-
-    </div>
+        </section>
 
 
-    <script src="script.js"></script>
+
+        <!-- =========================
+             MTSS CASES
+        ========================== -->
+
+        <section
+            id="cases"
+            class="page">
+
+            <div class="page-intro">
+
+                <div>
+
+                    <h2>MTSS Cases</h2>
+
+                    <p>
+                        Track active student support cases.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        27
+                    </div>
+
+                    <div>
+
+                        <span>Active Cases</span>
+
+                        <strong>27</strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon yellow">
+                        15
+                    </div>
+
+                    <div>
+
+                        <span>Tier 2</span>
+
+                        <strong>15</strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon red">
+                        4
+                    </div>
+
+                    <div>
+
+                        <span>Tier 3</span>
+
+                        <strong>4</strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <span>Improving</span>
+
+                        <strong>19</strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>Active MTSS Cases</h3>
+
+                        <p>
+                            Current students receiving additional support.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="case-grid">
+
+
+                    <div class="case-card">
+
+                        <div class="case-header">
+
+                            <strong>
+                                John Smith
+                            </strong>
+
+                            <span class="tier tier-2">
+                                Tier 2
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Academic intervention
+                        </p>
+
+                        <div class="progress">
+
+                            <div
+                                class="progress-bar"
+                                style="width: 72%;">
+                            </div>
+
+                        </div>
+
+                        <small>
+                            Reading Group · Improving
+                        </small>
+
+                    </div>
+
+
+                    <div class="case-card">
+
+                        <div class="case-header">
+
+                            <strong>
+                                Maria Garcia
+                            </strong>
+
+                            <span class="tier tier-2">
+                                Tier 2
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Behavior intervention
+                        </p>
+
+                        <div class="progress">
+
+                            <div
+                                class="progress-bar"
+                                style="width: 65%;">
+                            </div>
+
+                        </div>
+
+                        <small>
+                            Check-In · Improving
+                        </small>
+
+                    </div>
+
+
+                    <div class="case-card">
+
+                        <div class="case-header">
+
+                            <strong>
+                                Daniel Lopez
+                            </strong>
+
+                            <span class="tier tier-3">
+                                Tier 3
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Intensive academic support
+                        </p>
+
+                        <div class="progress">
+
+                            <div
+                                class="progress-bar"
+                                style="width: 42%;">
+                            </div>
+
+                        </div>
+
+                        <small>
+                            Individual Support · No Change
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             COMMUNICATION
+        ========================== -->
+
+        <section
+            id="communication"
+            class="page">
+
+            <div class="page-intro">
+
+                <div>
+
+                    <h2>Communication Log</h2>
+
+                    <p>
+                        Keep track of communication related to MTSS students.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <div class="toolbar">
+
+                    <input
+                        type="text"
+                        placeholder="Search communication...">
+
+
+                    <select>
+
+                        <option>
+                            All Types
+                        </option>
+
+                        <option>
+                            Parent Contact
+                        </option>
+
+                        <option>
+                            Teacher Update
+                        </option>
+
+                        <option>
+                            Team Meeting
+                        </option>
+
+                        <option>
+                            General Update
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="communication-list">
+
+
+                    <div class="communication-item">
+
+                        <div class="communication-icon">
+                            P
+                        </div>
+
+                        <div class="communication-content">
+
+                            <strong>
+                                Parent Contact
+                            </strong>
+
+                            <span>
+                                John Smith
+                            </span>
+
+                            <p>
+                                Discussed academic progress
+                                and reading intervention.
+                            </p>
+
+                        </div>
+
+                        <small>
+                            Oct 6
+                        </small>
+
+                    </div>
+
+
+                    <div class="communication-item">
+
+                        <div class="communication-icon purple">
+                            T
+                        </div>
+
+                        <div class="communication-content">
+
+                            <strong>
+                                Teacher Update
+                            </strong>
+
+                            <span>
+                                Maria Garcia
+                            </span>
+
+                            <p>
+                                Behavior has improved this week.
+                            </p>
+
+                        </div>
+
+                        <small>
+                            Oct 5
+                        </small>
+
+                    </div>
+
+
+                    <div class="communication-item">
+
+                        <div class="communication-icon orange">
+                            M
+                        </div>
+
+                        <div class="communication-content">
+
+                            <strong>
+                                Team Meeting
+                            </strong>
+
+                            <span>
+                                Daniel Lopez
+                            </span>
+
+                            <p>
+                                Reviewed current Tier 3 intervention.
+                            </p>
+
+                        </div>
+
+                        <small>
+                            Oct 3
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             REPORTS
+        ========================== -->
+
+        <section
+            id="reports"
+            class="page">
+
+            <div class="page-intro">
+
+                <div>
+
+                    <h2>Reports</h2>
+
+                    <p>
+                        MTSS trends and school-wide support information.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-grid">
+
+
+                <div class="content-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>Students by Tier</h3>
+
+                            <p>
+                                Current MTSS distribution
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chart">
+
+                        <div class="chart-row">
+
+                            <span>Tier 1</span>
+
+                            <div class="chart-track">
+                                <div
+                                    class="chart-fill blue-fill"
+                                    style="width: 45%;">
+                                </div>
+                            </div>
+
+                            <strong>8</strong>
+
+                        </div>
+
+
+                        <div class="chart-row">
+
+                            <span>Tier 2</span>
+
+                            <div class="chart-track">
+                                <div
+                                    class="chart-fill yellow-fill"
+                                    style="width: 75%;">
+                                </div>
+                            </div>
+
+                            <strong>15</strong>
+
+                        </div>
+
+
+                        <div class="chart-row">
+
+                            <span>Tier 3</span>
+
+                            <div class="chart-track">
+                                <div
+                                    class="chart-fill red-fill"
+                                    style="width: 25%;">
+                                </div>
+                            </div>
+
+                            <strong>4</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="content-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>Cases by Area</h3>
+
+                            <p>
+                                Primary areas of concern
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chart">
+
+                        <div class="chart-row">
+
+                            <span>Academics</span>
+
+                            <div class="chart-track">
+                                <div
+                                    class="chart-fill"
+                                    style="width: 80%;">
+                                </div>
+                            </div>
+
+                            <strong>14</strong>
+
+                        </div>
+
+
+                        <div class="chart-row">
+
+                            <span>Behavior</span>
+
+                            <div class="chart-track">
+                                <div
+                                    class="chart-fill"
+                                    style="width: 45%;">
+                                </div>
+                            </div>
+
+                            <strong>7</strong>
+
+                        </div>
+
+
+                        <div class="chart-row">
+
+                            <span>Tardies</span>
+
+                            <div class="chart-track">
+                                <div
+                                    class="chart-fill"
+                                    style="width: 30%;">
+                                </div>
+                            </div>
+
+                            <strong>4</strong>
+
+                        </div>
+
+
+                        <div class="chart-row">
+
+                            <span>Emotional</span>
+
+                            <div class="chart-track">
+                                <div
+                                    class="chart-fill"
+                                    style="width: 18%;">
+                                </div>
+                            </div>
+
+                            <strong>2</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="content-card report-summary">
+
+                <h3>Intervention Response</h3>
+
+                <div class="response-summary">
+
+                    <div>
+
+                        <strong class="green-text">
+                            19
+                        </strong>
+
+                        <span>Improving</span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong class="gray-text">
+                            5
+                        </strong>
+
+                        <span>No Change</span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong class="red-text">
+                            3
+                        </strong>
+
+                        <span>Declining</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<!-- =========================
+     SCRIPT
+========================== -->
+
+<script src="script.js"></script>
 
 </body>
 

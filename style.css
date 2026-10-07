@@ -177,3 +177,20 @@ tbody tr:hover { background: #fafafa; }
   .inline-controls { flex-direction: column; }
   .auth-card { padding: 26px; }
 }
+
+.case-update-help {
+  background: var(--gray-100);
+  border-left: 4px solid var(--burgundy-700);
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+}
+
+.case-update-section-title {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--burgundy-700);
+  font-weight: 850;
+  margin-bottom: 6px;
+}

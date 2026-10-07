@@ -84,6 +84,8 @@
           <button class="nav-item" data-view="academic"><span class="nav-icon">△</span>Academic Progress</button>
           <button class="nav-item" data-view="attendance"><span class="nav-icon">◷</span>Attendance</button>
           <button class="nav-item" data-view="communication"><span class="nav-icon">✉</span>Communication Log</button>
+          <button class="nav-item" data-view="case-updates"><span class="nav-icon">↻</span>Case Follow-Up
+</button>
         </nav>
         <div class="sidebar-footer">
           <div class="mini-status"><span class="dot"></span><span id="connection-status">Ready</span></div>
@@ -120,6 +122,7 @@
             <article class="stat-card"><div class="stat-icon">△</div><div><span class="stat-label">Academic</span><strong id="stat-academic">0</strong><span class="stat-foot">entries this view</span></div></article>
             <article class="stat-card"><div class="stat-icon">◷</div><div><span class="stat-label">Attendance</span><strong id="stat-attendance">0</strong><span class="stat-foot">entries this view</span></div></article>
             <article class="stat-card"><div class="stat-icon">✉</div><div><span class="stat-label">Communication</span><strong id="stat-communication">0</strong><span class="stat-foot">entries this view</span></div></article>
+            <article class="stat-card"> <div class="stat-icon">↻</div> <div> <span class="stat-label">Case Follow-Up</span> <strong id="stat-case-updates">0</strong> <span class="stat-foot">updates this view</span> </div> </article>
           </div>
 
           <div class="chart-grid">
@@ -169,6 +172,151 @@
           <div class="page-head"><div><p class="eyebrow">MODULE 04</p><h2>Communication Log</h2><p class="muted">Keep a chronological record of teacher, family, student, and team communication.</p></div></div>
           <div class="module-layout"><article class="panel"><div class="panel-head"><div><h3>New communication entry</h3><p class="small muted">A simple running log for team continuity.</p></div></div><form id="communication-form" class="form-grid"><label>Student<select id="communication-student" name="studentId" required></select></label><label>Date<input type="date" name="date" required></label><label>Staff member<input name="staff" required placeholder="Your name" /></label><label>Contact method<select name="method"><option>In person</option><option>Phone</option><option>Email</option><option>Text / message</option><option>Team meeting</option><option>Other</option></select></label><label>Audience<select name="audience"><option>Student</option><option>Parent / guardian</option><option>Teacher / staff</option><option>MTSS team</option><option>Other</option></select></label><label>Follow-up<select name="followup"><option>None</option><option>Needed</option><option>Completed</option></select></label><label class="span-2">Summary<textarea name="notes" rows="5" required placeholder="What was communicated, decided, or requested?"></textarea></label><div class="form-actions span-2"><button class="btn btn-primary" type="submit">Save entry</button></div></form></article><article class="panel"><div class="panel-head"><div><h3>Communication history</h3><p class="small muted">Newest notes first.</p></div><select id="communication-filter"><option value="all">All students</option></select></div><div id="communication-list" class="record-list"></div></article></div>
         </div>
+
+        <div id="view-case-updates" class="view hidden">
+  <div class="page-head">
+    <div>
+      <p class="eyebrow">CASE MANAGEMENT</p>
+      <h2>Case Follow-Up</h2>
+      <p class="muted">
+        Document what the team is doing, how the student is responding,
+        and what should happen next.
+      </p>
+    </div>
+  </div>
+
+  <div class="module-layout">
+
+    <!-- NEW UPDATE FORM -->
+    <article class="panel">
+      <div class="panel-head">
+        <div>
+          <h3>New case update</h3>
+          <p class="small muted">
+            Use this as the ongoing progress journal for each MTSS case.
+          </p>
+        </div>
+      </div>
+
+      <form id="case-update-form" class="form-grid">
+
+        <label>
+          Student
+          <select id="case-update-student" name="studentId" required>
+          </select>
+        </label>
+
+        <label>
+          Date
+          <input type="date" name="date" required />
+        </label>
+
+        <label>
+          Staff member
+          <input
+            name="staff"
+            required
+            placeholder="Your name"
+          />
+        </label>
+
+        <label>
+          Update type
+          <select name="updateType">
+            <option>Intervention update</option>
+            <option>Progress update</option>
+            <option>Student check-in</option>
+            <option>Parent / guardian update</option>
+            <option>Team meeting</option>
+            <option>Referral / consultation</option>
+            <option>Other</option>
+          </select>
+        </label>
+
+        <label>
+          Case status
+          <select name="caseStatus">
+            <option>Active</option>
+            <option>Improving</option>
+            <option>Monitoring</option>
+            <option>Resolved / closed</option>
+          </select>
+        </label>
+
+        <label>
+          Next review date
+          <input type="date" name="nextReviewDate" />
+        </label>
+
+        <label class="span-2">
+          Actions / supports provided
+          <textarea
+            name="actionsTaken"
+            rows="4"
+            required
+            placeholder="What did you or the team do to address the concern?"
+          ></textarea>
+        </label>
+
+        <label class="span-2">
+          Student response / progress
+          <textarea
+            name="studentResponse"
+            rows="4"
+            placeholder="What changed? What did the student say or demonstrate?"
+          ></textarea>
+        </label>
+
+        <label class="span-2">
+          Barriers / continuing concerns
+          <textarea
+            name="barriers"
+            rows="3"
+            placeholder="What is still getting in the way?"
+          ></textarea>
+        </label>
+
+        <label class="span-2">
+          Next steps
+          <textarea
+            name="nextSteps"
+            rows="3"
+            placeholder="What should happen next before the next review?"
+          ></textarea>
+        </label>
+
+        <div class="form-actions span-2">
+          <button class="btn btn-primary" type="submit">
+            Save case update
+          </button>
+        </div>
+
+      </form>
+    </article>
+
+
+    <!-- HISTORY -->
+    <article class="panel">
+
+      <div class="panel-head">
+        <div>
+          <h3>Case update history</h3>
+          <p class="small muted">
+            A chronological record of ongoing support.
+          </p>
+        </div>
+
+        <select id="case-update-filter">
+          <option value="all">All students</option>
+        </select>
+      </div>
+
+      <div id="case-update-list" class="record-list"></div>
+
+    </article>
+
+  </div>
+</div>
       </main>
     </section>
   </div>

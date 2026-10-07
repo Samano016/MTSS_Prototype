@@ -64,7 +64,7 @@ const state = {
   students: [],
   records: [],
   currentView: "dashboard",
-  selectedStudentId: "",
+  selectedMentor: "",
   unsubscribers: [],
   demoUser: {
     uid: "demo-admin",
@@ -164,7 +164,7 @@ function studentName(id) {
 }
 
 function recordCountForStudent(id) {
-  return state.records.filter((r) => r.studentId === id).length;
+  return state.records.filter((r) => r.Mentor === id).length;
 }
 
 function roleName() {
@@ -239,12 +239,12 @@ function populateAllStudentFilters() {
   const dash = $("dashboard-student");
 
   if (
-    state.selectedStudentId &&
+    state.selectedMentor &&
     [...dash.options].some(
-      (o) => o.value === state.selectedStudentId
+      (o) => o.value === state.selectedMentor
     )
   ) {
-    dash.value = state.selectedStudentId;
+    dash.value = state.selectedMentor;
   } else if (state.students[0]) {
     dash.value = state.students[0].id;
   }
@@ -402,7 +402,7 @@ function startDemo() {
 
   state.students = data.students;
   state.records = data.records;
-  state.selectedStudentId =
+  state.selectedMentor =
     state.students[0]?.id || "";
 
   enterApp();
@@ -464,10 +464,10 @@ function subscribeFirebaseData() {
           );
 
         if (
-          !state.selectedStudentId &&
+          !state.selectedMentor &&
           state.students[0]
         ) {
-          state.selectedStudentId =
+          state.selectedMentor =
             state.students[0].id;
         }
 
@@ -535,10 +535,10 @@ function scopedRecords() {
   ) {
     const id =
       $("dashboard-student")?.value ||
-      state.selectedStudentId;
+      state.selectedMentor;
 
     return state.records.filter(
-      (r) => r.studentId === id
+      (r) => r.Mentor === id
     );
   }
 
@@ -829,7 +829,7 @@ function renderAttentionList() {
   const rows = state.students
     .map((student) => {
       const records = state.records.filter(
-        (r) => r.studentId === student.id
+        (r) => r.Mentor === student.id
       );
 
       const concerns = records.filter(
@@ -910,11 +910,11 @@ function renderAttentionList() {
       button.addEventListener(
         "click",
         () => {
-          state.selectedStudentId =
-            button.dataset.studentId;
+          state.selectedMentor =
+            button.dataset.Mentor;
 
           $("dashboard-student").value =
-            state.selectedStudentId;
+            state.selectedMentor;
 
           switchView("students");
           renderStudents();
@@ -945,7 +945,7 @@ function renderRecentComms() {
               <div class="record-top">
                 <span class="record-title">
                   ${escapeHtml(
-                    studentName(r.studentId)
+                    studentName(r.Mentor)
                   )}
                 </span>
 
@@ -1055,14 +1055,14 @@ function renderStudents() {
       button.addEventListener(
         "click",
         () => {
-          state.selectedStudentId =
+          state.selectedMentor =
             button.dataset.selectStudent;
 
           populateAllStudentFilters();
 
           showToast(
             `${studentName(
-              state.selectedStudentId
+              state.selectedMentor
             )} selected`
           );
         }
@@ -1079,7 +1079,7 @@ function filteredRecords(module, filterId) {
       r.module === module &&
       (
         studentFilter === "all" ||
-        r.studentId === studentFilter
+        r.Mentor === studentFilter
       )
   );
 }
@@ -1100,7 +1100,7 @@ function renderBehavior() {
                 <div class="record-top">
                   <div class="record-title">
                     ${escapeHtml(
-                      studentName(r.studentId)
+                      studentName(r.Mentor)
                     )}
                   </div>
 
@@ -1175,7 +1175,7 @@ function renderAcademic() {
                 <div class="record-top">
                   <div class="record-title">
                     ${escapeHtml(
-                      studentName(r.studentId)
+                      studentName(r.Mentor)
                     )}
                     ·
                     ${escapeHtml(r.subject)}
@@ -1268,7 +1268,7 @@ function renderAttendance() {
                 <div class="record-top">
                   <div class="record-title">
                     ${escapeHtml(
-                      studentName(r.studentId)
+                      studentName(r.Mentor)
                     )}
                   </div>
 
@@ -1337,7 +1337,7 @@ function renderCommunication() {
                 <div class="record-top">
                   <div class="record-title">
                     ${escapeHtml(
-                      studentName(r.studentId)
+                      studentName(r.Mentor)
                     )}
                   </div>
 
@@ -1406,7 +1406,7 @@ function renderCaseUpdates() {
                 <div class="record-top">
                   <div class="record-title">
                     ${escapeHtml(
-                      studentName(r.studentId)
+                      studentName(r.Mentor)
                     )}
                   </div>
 
@@ -1598,11 +1598,11 @@ async function submitModuleForm(
 
   const form = event.currentTarget;
   const data = formObject(form);
-  const studentId = data.studentId;
+  const Mentor = data.Mentor;
 
   if (
-    !studentId ||
-    !getStudent(studentId)
+    !Mentor ||
+    !getStudent(Mentor)
   ) {
     showNotice(
       "Please select a student.",
@@ -1911,7 +1911,7 @@ $("logout-btn").addEventListener(
     state.profile = null;
     state.students = [];
     state.records = [];
-    state.selectedStudentId = "";
+    state.selectedMentor = "";
 
     showOnly("auth-view");
   }
@@ -2003,7 +2003,7 @@ $("dashboard-scope").addEventListener(
 $("dashboard-student").addEventListener(
   "change",
   (event) => {
-    state.selectedStudentId =
+    state.selectedMentor =
       event.target.value;
 
     renderDashboard();
@@ -2155,7 +2155,7 @@ $("student-form").addEventListener(
       if (
         state.mode === "demo"
       ) {
-        state.selectedStudentId =
+        state.selectedMentor =
           student.id;
       }
 
@@ -2200,7 +2200,7 @@ $("export-csv").addEventListener(
         "module",
         "date",
         "student",
-        "studentId",
+        "Mentor",
         "staff",
         "type",
         "updateType",
@@ -2229,8 +2229,8 @@ $("export-csv").addEventListener(
       rows.push([
         r.module,
         r.date,
-        studentName(r.studentId),
-        r.studentId,
+        studentName(r.Mentor),
+        r.Mentor,
         r.staff || "",
 
         r.type || "",
@@ -2337,7 +2337,7 @@ if (FIREBASE_READY && auth) {
           state.profile = null;
           state.students = [];
           state.records = [];
-          state.selectedStudentId = "";
+          state.selectedMentor = "";
 
           showOnly("auth-view");
         }

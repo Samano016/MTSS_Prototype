@@ -1,0 +1,45 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function myProfile() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+
+    function sameSchool(schoolId) {
+      return signedIn() && myProfile().schoolId != 'UNASSIGNED' && myProfile().schoolId == schoolId;
+    }
+
+    function canWrite() {
+      return signedIn() && (myProfile().role == 'admin' || myProfile().role == 'teacher' || myProfile().role == 'staff');
+    }
+
+    match /users/{uid} {
+      allow read: if signedIn() && (request.auth.uid == uid || myProfile().role == 'admin');
+      allow create: if signedIn() && (
+        (request.auth.uid == uid && request.resource.data.role in ['staff', 'teacher'] && request.resource.data.schoolId == 'UNASSIGNED')
+        || (myProfile().role == 'admin' && request.resource.data.schoolId == myProfile().schoolId)
+      );
+      allow update: if signedIn() && (
+        (request.auth.uid == uid && request.resource.data.role == resource.data.role && request.resource.data.schoolId == resource.data.schoolId)
+        || (myProfile().role == 'admin' && request.resource.data.schoolId == myProfile().schoolId)
+      );
+      allow delete: if signedIn() && myProfile().role == 'admin';
+    }
+
+    match /students/{studentId} {
+      allow read: if sameSchool(resource.data.schoolId);
+      allow create: if canWrite() && sameSchool(request.resource.data.schoolId);
+      allow update, delete: if canWrite() && sameSchool(resource.data.schoolId);
+    }
+
+    match /records/{recordId} {
+      allow read: if sameSchool(resource.data.schoolId);
+      allow create: if canWrite() && sameSchool(request.resource.data.schoolId);
+      allow update, delete: if canWrite() && sameSchool(resource.data.schoolId);
+    }
+  }
+}

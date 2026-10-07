@@ -984,7 +984,7 @@ function renderStudents() {
 
   const students = [...state.students].filter(
     (s) =>
-      `${s.name} ${s.studentNumber}`
+      `${s.name} ${s.mentor}`
         .toLowerCase()
         .includes(search)
   );
